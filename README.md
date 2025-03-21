@@ -1,35 +1,74 @@
-# weather
+# Weather widget
 
-This template should help get you started developing with Vue 3 in Vite.
+Минималистичный погодный виджет на Vue 3 с динамическим фоном и автоматическим определением местоположения. Показывает текущую температуру, мин/макс значения, описание погоды и иконку — данные берутся из OpenWeatherMap API, фоновые изображения загружаются через Pexels API.
 
-## Recommended IDE Setup
+[**-->Посмотреть демо‑версию**](https://brix-form.vercel.app/)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Стек технологий
 
-## Customize configuration
+- **Фреймворк**: Vue 3
+- **CSS**: Tailwind CSS
+- **Линтинг**: ESLint, Prettier
+- **Сборка проекта**: Vite
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Использование
 
-## Project Setup
+- При загрузке приложение запрашивает разрешение на геолокацию.
+- Получает координаты пользователя и запрашивает данные погоды.
+- Отображает температуру, описание и иконку погоды в компоненте Widget.
+- Одновременно делает запрос в Pexels API и меняет фон на подходящую фотографию по температуре.
 
-```sh
+## Установка проекта
+
+### 1. Установите зависимости
+
+```bash
 yarn
 ```
 
-### Compile and Hot-Reload for Development
+### 2. Запустите проект в режиме разработки
 
-```sh
+```bash
 yarn dev
 ```
 
-### Compile and Minify for Production
+### 3. Сборка для продакшена
 
-```sh
+```bash
 yarn build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### 4. Предпросмотр собранного проекта
 
-```sh
+```bash
+yarn preview
+```
+
+### 5. Автоматическое исправление ошибок линтинга
+
+```bash
 yarn lint
+```
+
+### 6. Форматирование кода
+
+```bash
+yarn format
+```
+
+## Структура проекта
+
+```plaintext
+├── public/
+├── src/
+│   ├── assets/            # Картинки и стили
+│   ├── components/        # Widget.vue, MainPage.vue
+│   ├── composables/       # useWeather.js, useBackgroundImage.js, useWeatherData.js
+│   ├── constants/         # Константы API, URL иконок
+│   ├── utils/             # Утилиты (getBackgroundQuery, getWeatherGradient)
+│   ├── App.vue
+│   └── main.js
+├── vite.config.js
+├── package.json
+└── README.md
 ```
